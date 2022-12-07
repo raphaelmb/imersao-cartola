@@ -30,9 +30,14 @@ func main() {
 
 	r := chi.NewRouter()
 	r.Get("/players", httphandler.ListPlayersHandler(ctx, *db.New(dtb)))
-	r.Get("/my-teams/{teamID}/players", httphandler.ListMyTeamPlayers(ctx, *db.New(dtb)))
+	r.Get("/my-teams/{teamID}/players", httphandler.ListMyTeamPlayersHandler(ctx, *db.New(dtb)))
+	r.Get("/my-teams/{teamID}/balance", httphandler.GetMyTeamBalanceHandler(ctx, *db.New(dtb)))
+	r.Get("/matches", httphandler.ListMatchesHandler(ctx, repository.NewMatchRepository(dtb)))
+	r.Get("/matches/{matchID}", httphandler.ListMatchByIDHandler(ctx, repository.NewMatchRepository(dtb)))
 
-	http.ListenAndServe(":8080", r)
+	if err = http.ListenAndServe(":8080", r); err != nil {
+		panic(err)
+	}
 }
 
 func registerRepositories(uow *uow.Uow) {
