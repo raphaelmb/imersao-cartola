@@ -1,12 +1,24 @@
-import { Button } from "@mui/material";
+import { Box } from "@mui/material";
 import type { NextPage } from "next";
-import styles from "../styles/Home.module.css";
+import { MatchResult } from "../../components/MatchResult";
+import { Page } from "../../components/Page";
 
 const ListMatchesPage: NextPage = () => {
   return (
-    <div>
-      <Button variant="contained">Teste</Button>
-    </div>
+    <Page>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          flexDirection: "column",
+          gap: (theme) => theme.spacing(3),
+        }}
+      >
+        <MatchResult match={{ team_a: "Brasil", team_b: "Argentina" }} />
+        <MatchResult match={{ team_a: "Brasil", team_b: "Argentina" }} />
+        <MatchResult match={{ team_a: "Brasil", team_b: "Argentina" }} />
+      </Box>
+    </Page>
   );
 };
 
