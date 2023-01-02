@@ -1,13 +1,13 @@
 from django.contrib import admin
 from .models import Player, Team, MyTeam, Match, Action
 
-# Register your models here.
-
 class ActionInline(admin.TabularInline):
-  model = Action
+    model = Action
+
 
 class MatchAdmin(admin.ModelAdmin):
-  inlines = [ActionInline]
+    inlines = [ActionInline]
+
 
 admin.site.register(Player)
 admin.site.register(Team)

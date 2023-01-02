@@ -22,27 +22,28 @@ import React, { useCallback, useMemo, useState } from "react";
 import { Player, PlayersMap } from "../util/models";
 import PersonIcon from "@mui/icons-material/Person2";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { httpAdmin } from "../util/http";
 
 const players = [
   {
-    id: 1,
+    id: "1",
     name: "Messi",
     price: 35,
   },
   {
-    id: 2,
+    id: "2",
     name: "Cristiano Ronaldo",
     price: 35,
   },
   {
-    id: 3,
+    id: "3",
     name: "Vinicius Junior",
     price: 35,
   },
 ];
 
 const fakePlayer = {
-  id: 0,
+  id: "",
   name: "Escolha um jogador",
   price: 0,
 };
@@ -61,7 +62,7 @@ const fakePlayers: Player[] = new Array(totalPlayers)
 const ListPlayersPage: NextPage = () => {
   const [playersSelected, setPlayersSelected] = useState(fakePlayers);
   const countPlayersUsed = useMemo(
-    () => playersSelected.filter((player) => player.id !== 0).length,
+    () => playersSelected.filter((player) => player.id !== "").length,
     [playersSelected]
   );
   const budgetRemaining = useMemo(
@@ -75,7 +76,7 @@ const ListPlayersPage: NextPage = () => {
       const hasFound = prev.find((p) => p.id === player.id);
       if (hasFound) return prev;
 
-      const firstIndexFakePlayer = prev.findIndex((p) => p.id === 0);
+      const firstIndexFakePlayer = prev.findIndex((p) => p.id === "");
       if (firstIndexFakePlayer === -1) return prev;
 
       const newPlayers = [...prev];
@@ -96,6 +97,15 @@ const ListPlayersPage: NextPage = () => {
       return newPlayers;
     });
   }, []);
+
+  const saveMyPlayers = useCallback(async () => {
+    await httpAdmin.put(
+      "/my-teams/22087246-01bc-46ad-a9d9-a99a6d734167/players",
+      {
+        players_uuid: playersSelected.map((player) => player.id),
+      }
+    );
+  }, [playersSelected]);
 
   return (
     <Page>
@@ -195,7 +205,7 @@ const ListPlayersPage: NextPage = () => {
                         secondaryAction={
                           <IconButton
                             edge="end"
-                            disabled={player.id === 0}
+                            disabled={player.id === ""}
                             onClick={() => removePlayer(key)}
                           >
                             <DeleteIcon />
@@ -204,7 +214,7 @@ const ListPlayersPage: NextPage = () => {
                       >
                         <ListItemAvatar>
                           <Avatar>
-                            {player.id === 0 ? (
+                            {player.id === "" ? (
                               <PersonIcon />
                             ) : (
                               <Image
@@ -234,6 +244,7 @@ const ListPlayersPage: NextPage = () => {
             variant="contained"
             size="large"
             disabled={countPlayersUsed < totalPlayers || budgetRemaining < 0}
+            onClick={() => saveMyPlayers()}
           >
             Salvar
           </Button>
