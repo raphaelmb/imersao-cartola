@@ -3,7 +3,7 @@ package repository
 import (
 	"errors"
 
-	"github.com/raphaelmb/imersao-cartola-consolidacao/internal/infra/db"
+	"github.com/devfullcycle/imersao10-consolidacao/internal/infra/db"
 )
 
 var ErrQueriesNotSet = errors.New("queries not set")

@@ -1,5 +1,5 @@
 -- name: CreateAction :exec
-INSERT INTO actions (id, match_id, team_id, player_id, action, score, minute) VALUES (?, ?, ?, ?, ?, ?, ?);
+INSERT INTO actions (id, match_id, team_id, player_id, action, score, minute) VALUES (?, ?, ?, ?, ?, ?,?);
 
 -- name: CreatePlayer :exec
 INSERT INTO players (id, name, price) VALUES (?, ?, ?);
@@ -69,3 +69,6 @@ UPDATE matches SET match_date = ?, team_a_id = ?, team_a_name = ?, team_b_id = ?
 
 -- name: GetMyTeamBalance :one
 SELECT score as balance FROM my_team WHERE id = ?;
+
+-- name: UpdateMyTeamScore :exec
+UPDATE my_team SET score = ? WHERE id = ?;

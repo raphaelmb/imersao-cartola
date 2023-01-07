@@ -67,7 +67,7 @@ func (u *Uow) CommitOrRollback() error {
 	err := u.Tx.Commit()
 	if err != nil {
 		if errRb := u.Rollback(); errRb != nil {
-			return fmt.Errorf(fmt.Sprintf("commit error: %s, rollback error: %s", err, errRb))
+			return errors.New(fmt.Sprintf("commit error: %s, rollback error: %s", err, errRb))
 		}
 		return err
 	}

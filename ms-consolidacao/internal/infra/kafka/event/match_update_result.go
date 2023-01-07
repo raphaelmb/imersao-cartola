@@ -6,8 +6,8 @@ import (
 	"fmt"
 
 	"github.com/confluentinc/confluent-kafka-go/kafka"
-	"github.com/raphaelmb/imersao-cartola-consolidacao/internal/usecase"
-	"github.com/raphaelmb/imersao-cartola-consolidacao/pkg/uow"
+	"github.com/devfullcycle/imersao10-consolidacao/internal/usecase"
+	"github.com/devfullcycle/imersao10-consolidacao/pkg/uow"
 )
 
 type ProcessMatchUpdateResult struct{}

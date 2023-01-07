@@ -3,9 +3,9 @@ package usecase
 import (
 	"context"
 
-	"github.com/raphaelmb/imersao-cartola-consolidacao/internal/domain/entity"
-	"github.com/raphaelmb/imersao-cartola-consolidacao/internal/domain/repository"
-	"github.com/raphaelmb/imersao-cartola-consolidacao/pkg/uow"
+	"github.com/devfullcycle/imersao10-consolidacao/internal/domain/entity"
+	"github.com/devfullcycle/imersao10-consolidacao/internal/domain/repository"
+	"github.com/devfullcycle/imersao10-consolidacao/pkg/uow"
 )
 
 // {"id":"1A","name":"Cristiano Ronaldo","initialPrice":10.0}

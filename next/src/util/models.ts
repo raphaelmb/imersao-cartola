@@ -29,7 +29,7 @@ export type Match = {
   team_a: string; //Brasil
   team_b: string; //Argentina
   result: string; //'1-0'
-  // score: number;
+  //score: number;
   actions: Action[];
 };
 

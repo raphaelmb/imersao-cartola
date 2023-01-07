@@ -7,13 +7,8 @@ export type TeamLogoProps = BoxProps;
 export const TeamLogo = (props: TeamLogoProps) => {
   return (
     <Box
-      {...props}
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        ...props.sx,
-      }}
+        {...props}
+      sx={{ display: "flex", flexDirection: "column", alignItems: "center", ...props.sx }}
     >
       <Image
         src="/img/my-team-logo.svg"

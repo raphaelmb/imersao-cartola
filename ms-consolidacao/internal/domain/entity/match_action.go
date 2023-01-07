@@ -17,7 +17,7 @@ func NewGameAction(playerID string, minute int, action string, score int, teamID
 		ID:       uuid.New().String(),
 		PlayerID: playerID,
 		Minute:   minute,
-		TeamID:   teamID,
+		TeamID:  teamID,
 		Action:   action,
 		Score:    score,
 	}

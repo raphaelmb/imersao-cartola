@@ -1,6 +1,6 @@
 package factory
 
-import "github.com/raphaelmb/imersao-cartola-consolidacao/internal/infra/kafka/event"
+import "github.com/devfullcycle/imersao10-consolidacao/internal/infra/kafka/event"
 
 func CreateProcessMessageStrategy(topic string) event.ProcessEventStrategy {
 	switch topic {
@@ -8,7 +8,7 @@ func CreateProcessMessageStrategy(topic string) event.ProcessEventStrategy {
 		// {"my_team_id":"1", "players":["1","2","3","4","5"]}
 		return event.ProcessChooseTeam{}
 	case "newPlayer":
-		// {"id": "10","name": "John","initial_price": 10.5}
+		// {"id": "10","name": "Wesley","initial_price": 10.5}
 		return event.ProcessNewPlayer{}
 	case "newMatch":
 		// {"id":"3","match_date":"2021-05-01T00:00:00Z","team_a_id":"1","team_b_id":"2"}

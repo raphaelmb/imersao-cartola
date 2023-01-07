@@ -1,6 +1,6 @@
 package presenter
 
-import "github.com/raphaelmb/imersao-cartola-consolidacao/internal/domain/entity"
+import "github.com/devfullcycle/imersao10-consolidacao/internal/domain/entity"
 
 type Matches []Match
 

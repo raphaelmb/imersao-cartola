@@ -5,9 +5,9 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/raphaelmb/imersao-cartola-consolidacao/internal/domain/entity"
-	"github.com/raphaelmb/imersao-cartola-consolidacao/internal/domain/repository"
-	"github.com/raphaelmb/imersao-cartola-consolidacao/pkg/uow"
+	"github.com/devfullcycle/imersao10-consolidacao/internal/domain/entity"
+	"github.com/devfullcycle/imersao10-consolidacao/internal/domain/repository"
+	"github.com/devfullcycle/imersao10-consolidacao/pkg/uow"
 )
 
 var errActionNotFound = errors.New("action not found")
@@ -69,7 +69,7 @@ func (a *ActionAddUseCase) Execute(ctx context.Context, input ActionAddInput) er
 			return err
 		}
 
-		myTeam, err := myTeamRepo.FindByID(ctx, input.TeamID)
+		myTeam, err := myTeamRepo.FindByID(ctx, "22087246-01bc-46ad-a9d9-a99a6d734167")
 		if err != nil {
 			return err
 		}

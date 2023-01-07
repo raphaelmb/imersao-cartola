@@ -8,8 +8,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/raphaelmb/imersao-cartola-consolidacao/internal/domain/entity"
-	"github.com/raphaelmb/imersao-cartola-consolidacao/internal/infra/db"
+	"github.com/devfullcycle/imersao10-consolidacao/internal/domain/entity"
+	"github.com/devfullcycle/imersao10-consolidacao/internal/infra/db"
 )
 
 type MatchRepository struct {

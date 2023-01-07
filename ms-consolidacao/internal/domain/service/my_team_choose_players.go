@@ -3,7 +3,7 @@ package service
 import (
 	"errors"
 
-	"github.com/raphaelmb/imersao-cartola-consolidacao/internal/domain/entity"
+	"github.com/devfullcycle/imersao10-consolidacao/internal/domain/entity"
 )
 
 var errNotEnoughMoney = errors.New("not enough money")

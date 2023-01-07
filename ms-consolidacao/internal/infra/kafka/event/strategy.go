@@ -4,9 +4,9 @@ import (
 	"context"
 
 	"github.com/confluentinc/confluent-kafka-go/kafka"
-	"github.com/raphaelmb/imersao-cartola-consolidacao/pkg/uow"
+	"github.com/devfullcycle/imersao10-consolidacao/pkg/uow"
 )
 
 type ProcessEventStrategy interface {
-	Process(ctx context.Context, msg *kafka.Message, uow uow.UowInterface) error
+    Process(ctx context.Context, msg *kafka.Message, uow uow.UowInterface) error
 }

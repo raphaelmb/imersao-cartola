@@ -5,9 +5,9 @@ import (
 	"encoding/json"
 
 	"github.com/confluentinc/confluent-kafka-go/kafka"
-	"github.com/raphaelmb/imersao-cartola-consolidacao/internal/domain/entity"
-	"github.com/raphaelmb/imersao-cartola-consolidacao/internal/usecase"
-	"github.com/raphaelmb/imersao-cartola-consolidacao/pkg/uow"
+	"github.com/devfullcycle/imersao10-consolidacao/internal/domain/entity"
+	"github.com/devfullcycle/imersao10-consolidacao/internal/usecase"
+	"github.com/devfullcycle/imersao10-consolidacao/pkg/uow"
 )
 
 type ProcessNewAction struct{}

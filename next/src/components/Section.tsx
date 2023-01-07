@@ -7,7 +7,10 @@ export const Section = (props: SectionProps) => {
     <Paper
       {...props}
       variant="outlined"
-      sx={{ padding: (theme) => theme.spacing(2), ...props.sx }}
+      sx={{
+        padding: (theme) => theme.spacing(2),
+        ...props.sx,
+      }}
     />
   );
 };
